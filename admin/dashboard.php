@@ -9,42 +9,61 @@ if (!isset($_SESSION['admin'])) {
 include '../config/db.php';
 ?>
 
-<!-- Bootstrap 5 CDN -->
+<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-<div class="container mt-5">
-  <h2 class="mb-4">Panel de administración</h2>
 
-  <!-- Botón para agregar producto -->
-  <div class="mb-3">
+<style>
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+  .sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    padding-top: 20px;
+  }
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 12px 20px;
+  }
+  .sidebar a:hover {
+    background-color: #495057;
+  }
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+</style>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <a href="dashboard.php">Inicio</a>
+  <a href="#productos">Ver productos</a>
+  <a href="#inventario"> Ver inventario</a>
+  <a href="perfil.php"> Perfil</a>
+  <a href="logout.php"> Cerrar sesión</a>
+</div>
+
+<!-- Contenido principal -->
+<div class="main-content">
+
+  <h2 class="mb-2 text-center">Panel de administración</h2>
+  <div class="mb-2">
     <a href="agregar-producto.php" class="btn btn-primary">Agregar nuevo producto</a>
-    <a href="logout.php" class="btn btn-secondary float-end">Cerrar sesión</a>
   </div>
 
-  <!-- Resumen de productos -->
-  <div class="row text-center mb-4">
-    <div class="col-md-4">
-      <div class="card border-primary">
-        <div class="card-body">
-          <h5>Total de productos</h5>
-          <p class="display-6">
-            <?php
-            $res = $conn->query("SELECT COUNT(*) AS total FROM productos");
-            $row = $res->fetch_assoc();
-            echo $row['total'];
-            ?>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
   <!-- Tabla de productos -->
-  <div class="table-responsive">
+  <div class="table-responsive mb-5" id="productos">
+    <h4 class="mb-3">Lista de productos</h4>
     <table class="table table-striped table-bordered align-middle">
       <thead class="table-dark text-center">
         <tr>
-          <th>Imagen del producto</th>
+          <th>Imagen</th>
           <th>Nombre</th>
           <th>Precio</th>
           <th>Stock</th>
@@ -76,6 +95,30 @@ include '../config/db.php';
       </tbody>
     </table>
   </div>
+
+  <!-- Resumen de productos -->
+  <div class="row text-center mb-2">
+    <div class="col-md-4">
+      <div class="card border-primary">
+        <div class="card-body">
+          <h5>Total de guayaberas</h5>
+          <p class="fs-4">
+            <?php
+            $res = $conn->query("SELECT COUNT(*) AS total FROM productos");
+            $row = $res->fetch_assoc();
+            echo $row['total'];
+            ?>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </div>
 
-<?php include '../includes/footer.php'; ?>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+

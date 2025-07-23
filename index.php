@@ -88,7 +88,7 @@
       ?>
 
         <!-- cards de los productos -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-3 mb-2">
           <div class="card h-100">
             <img src="uploads/<?php echo htmlspecialchars($row['imagenProducto']); ?>" class="card-img-top" style="height: 250px; object-fit: cover;" alt="Imagen del producto">
             <div class="card-body d-flex flex-column">
