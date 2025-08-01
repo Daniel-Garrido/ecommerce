@@ -1,6 +1,6 @@
  <div id="CONTACTO" class="container my-5">
-   <h2 class="fw-bold mb-4 text-center"> Para servicio de mayoreo puede contactarnos</h2>
-   <form>
+   <h2 class="fw-normal mb-4 text-center"> Para servicio de mayoreo puede contactarnos</h2>
+   <form class="p-4 border border-light border-2">
      <!-- Nombre -->
      <div class="mb-3">
        <label for="nombre" class="form-label">Nombre</label>
