@@ -19,6 +19,8 @@
   <!-- libreria de fontawesome -->
   <script src="https://kit.fontawesome.com/eb00b890a6.js" crossorigin="anonymous"></script>
 
+  <!-- Libreria de AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
 
 <body>
@@ -43,25 +45,32 @@
     </div>
 
     <div class="carousel-inner">
+      <!-- contenido del carrousel -->
       <div class="carousel-item active" data-bs-interval="10000">
-        <img src="Img/img1.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5 class="text-white">D´tun Guayaberas</h5>
-          <p class="text-white"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, commodi? Expedita eos necessitatibus vitae numquam corrupti sed adipisci minus hic ex, facilis, mollitia ea quas quod porro dolorem! Dicta, et!</p>
+        <img src="Img/slider2.png" class="d-block w-100 vh-100" alt="...">
+        <!-- Capa oscura -->
+        <div class="overlay"></div>
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+          <h1 data-aos="fade-up" class="titulo-principal text-white display-3 fw-bold">D´tun Guayaberas</h1>
+          <p data-aos="fade-up" class="text-white fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, commodi? Expedita eos necessitatibus vitae numquam corrupti sed adipisci minus hic ex.</p>
         </div>
       </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="Img/img1.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5 class="text-white">D´tun Guayaberas</h5>
-          <p class="text-white"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, commodi? Expedita eos necessitatibus vitae numquam corrupti sed adipisci minus hic ex, facilis, mollitia ea quas quod porro dolorem! Dicta, et!</p>
+      <!-- contenido del carrousel -->
+      <div class="carousel-item " data-bs-interval="2000">
+        <img src="Img/slider1.png" class="d-block w-100 vh-100" alt="...">
+        <!-- Capa oscura -->
+        <div class="overlay"></div>
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+          <p class="text-white fs-6"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, commodi? Expedita eos necessitatibus vitae numquam corrupti sed adipisci minus hic ex, facilis, mollitia ea quas quod porro dolorem! Dicta, et!</p>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="Img/img1.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5 class="text-white">D´tun Guayaberas</h5>
-          <p class="text-white"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, commodi? Expedita eos necessitatibus vitae numquam corrupti sed adipisci minus hic ex, facilis, mollitia ea quas quod porro dolorem! Dicta, et!</p>
+      <!-- contenido del carrousel -->
+      <div class="carousel-item " data-bs-interval="2000">
+        <img src="Img/slider3.png" class="d-block w-100 vh-100" alt="...">
+        <!-- Capa oscura -->
+        <div class="overlay"></div>
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+          <p class="text-white fs-6"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, commodi? Expedita eos necessitatibus vitae numquam corrupti sed adipisci minus hic ex, facilis, mollitia ea quas quod porro dolorem! Dicta, et!</p>
         </div>
       </div>
     </div>
@@ -79,15 +88,14 @@
 
   </section>
 
-
   <!-- Sección Garantías -->
   <section class="bg-light py-5">
     <div class="container text-center">
-      <h2 class="mb-5 fw-normal">Compra tu Guayabera con seguridad</h2>
+      <h2 data-aos="fade-up" class="mb-5 fw-normal" data-aos="fade-up">Compra tu Guayabera con seguridad</h2>
       <div class="row g-4 justify-content-center">
 
         <!-- Envío gratis -->
-        <div class="col-12 col-sm-6 col-md-3">
+        <div data-aos="fade-up" class="col-12 col-sm-6 col-md-3">
           <div class="benefit">
             <i class="bi bi-truck fs-1"></i>
             <h5 class="fw-bold mt-3">ENVÍO A TODO MÉXICO</h5>
@@ -96,7 +104,7 @@
         </div>
 
         <!-- Pagos seguros -->
-        <div class="col-12 col-sm-6 col-md-3">
+        <div data-aos="fade-up" class="col-12 col-sm-6 col-md-3">
           <div class="benefit">
             <i class="bi bi-credit-card-2-front-fill fs-1"></i>
             <h5 class="fw-bold mt-3">PAGOS 100% SEGUROS</h5>
@@ -105,7 +113,7 @@
         </div>
 
         <!-- Cambios y devoluciones -->
-        <div class="col-12 col-sm-6 col-md-3">
+        <div data-aos="fade-up" class="col-12 col-sm-6 col-md-3">
           <div class="benefit">
             <i class="bi bi-box-seam fs-1"></i>
             <h5 class="fw-bold mt-3">CAMBIOS Y DEVOLUCIONES</h5>
@@ -114,7 +122,7 @@
         </div>
 
         <!-- Asistencia por WhatsApp -->
-        <div class="col-12 col-sm-6 col-md-3">
+        <div data-aos="fade-up" class="col-12 col-sm-6 col-md-3">
           <div class="benefit">
             <i class="bi bi-whatsapp fs-1 text-success"></i>
             <h5 class="fw-bold mt-3">ASISTENCIA VÍA WHATSAPP</h5>
@@ -126,15 +134,15 @@
     </div>
   </section>
 
-
   <!-- contenedor de informacion de titulo -->
+  <a name="Tienda"></a>
   <div class="container mt-4">
-    <h2 class="fw-normal">Bienvenido a nuestra tienda</h2>
-    <p>Explora nuestros productos y disfruta de una experiencia de compra única.</p>
+    <h2 data-aos="fade-up" class="fw-normal">Bienvenido a nuestra tienda</h2>
+    <p data-aos="fade-up">Explora nuestros productos y disfruta de una experiencia de compra única.</p>
   </div>
 
-  <!-- seccion de productos -->
-  <section class="container mt-5">
+  <!-- Seccion de productos -->
+  <section id="" class="container mt-5 mb-4">
     <div class="row">
 
       <?php
@@ -146,16 +154,16 @@
       ?>
 
         <!-- contenido de los productos -->
-        <div class="col-md-3 mb-4">
+        <div class="col-6 col-md-3 mb-4">
           <!-- card de los productos -->
           <div class="contenido-productos card h-100 text-center border-0">
-            <img src="uploads/<?php echo htmlspecialchars($row['imagenProducto']); ?>" class="card-img-top"
+            <img data-aos="fade-up" src="uploads/<?php echo htmlspecialchars($row['imagenProducto']); ?>" class="card-img-top"
               style="height: 250px; object-fit: cover;"
               alt="Imagen del producto"
               data-bs-toggle="modal"
               data-bs-target="#modal<?php echo $productId; ?>">
 
-            <div class="card-body d-flex flex-column">
+            <div data-aos="fade-up" class="card-body d-flex flex-column">
               <h6 class="fw-semibold mb-0"><?php echo htmlspecialchars($row['nombreProducto']); ?></h6>
               <p class="text-muted">Precio: $<?php echo number_format((float)$row['precioProducto'], 2); ?> mxn</p>
 
@@ -223,8 +231,18 @@
 
   <!-- script de bootsrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   <!-- script local -->
   <script src="js/js.js"></script>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Libreria de AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Libreria local de javascript -->
+  <script src="js/formulario.js"></script>
 </body>
 
 </html>

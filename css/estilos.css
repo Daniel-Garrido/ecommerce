@@ -6,6 +6,7 @@
 
 body {
   font-family: "Inter", sans-serif;
+ 
 }
 
 /* estilos al ancla */
@@ -26,6 +27,7 @@ body {
 
   color: #fff;
   transition: all 0.5s ease;
+  z-index: 2000;
 }
 
 .btn-arriba i {
@@ -38,6 +40,21 @@ body {
   box-shadow: 0 8px 16px rgba(70, 60, 63, 0.5);
   transform: scale(1.1);
 }
+
+/* Estilos al carrousel de inicio */
+.carousel-item { position: relative; }
+
+/* overlay que NO bloquea clics */
+.carousel-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  pointer-events: none;
+}
+
+.carousel-caption { z-index: 2; }
+.carousel-control-prev, .carousel-control-next { z-index: 2; }
+
 
 /* estilo a la card de los productos */
 .contenido-productos{
@@ -60,3 +77,17 @@ body {
   transition: all 0.3s ease;
 }
 
+.content-img{
+  width: 100%;
+}
+.content-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+@media(max-width: 500px){
+  .titulo-principal{
+    font-size: 35px !important;
+  }
+}

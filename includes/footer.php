@@ -3,7 +3,7 @@
     <div class="row">
 
       <!-- Logo + descripción -->
-      <div class="col-md-3 mb-4">
+      <div data-aos="fade-up" class="col-md-3 mb-4">
         <h5 class="mb-2">
           <span class="badge bg-dark rounded-pill"></span> Logo
         </h5>
@@ -11,7 +11,7 @@
       </div>
 
       <!-- Sobre nosotros -->
-      <div class="col-md-3 mb-4">
+      <div data-aos="fade-up" class="col-md-3 mb-4">
         <h6 class="fw-bold">Sobre nosotros</h6>
         <ul class="list-unstyled small">
           <li><a href="#" class="text-muted text-decoration-none">Propietario : Luis felipe tun che </a></li>
@@ -22,7 +22,7 @@
       </div>
 
       <!-- Proyectos -->
-      <div class="col-md-3 mb-4">
+      <div data-aos="fade-up" class="col-md-3 mb-4">
         <h6 class="fw-bold">Proyectos</h6>
         
         <ul class="list-unstyled small">
@@ -39,7 +39,7 @@
       </div>
 
       <!-- maps -->
-      <div class=" col-md-3 mb-4">
+      <div data-aos="fade-up" class=" col-md-3 mb-4">
         <h6 class="fw-bold">Maps</h6>
         <ul class="list-unstyled small">
           <li><a href="#" class="text-muted text-decoration-none">Asuntos</a></li>

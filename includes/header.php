@@ -5,18 +5,19 @@ if (session_status() === PHP_SESSION_NONE) {
 ?>
 
 <!-- menu de navegacion -->
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-4 pb-4">
   <div class="container-fluid">
     <a class="navbar-brand text-white" href="#">Logo</a>
 
-    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- btn para el menu de hamburguesa -->
+    <button class="navbar-toggler border-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">Tienda Guayaberas</a>
+          <a class="nav-link active text-white" aria-current="page" href="#Tienda">Tienda Guayaberas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link active text-white" aria-current="page" href="includes/sobreNegocio.php">Sobre nosotros</a>
@@ -28,23 +29,22 @@ if (session_status() === PHP_SESSION_NONE) {
             Productos
           </a>
 
-
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Guayaberas para caballero</a></li>
             <li><a class="dropdown-item" href="#">Guayaberas para dama</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Servicio de mayoreo</a></li>
+            <li><a class="dropdown-item" href="#form">Servicio de mayoreo</a></li>
           </ul>
 
         </li>
 
         <!-- icono de lista de deseos -->
         <li class="nav-item">
-          <a href="wishlist.php" class="nav-link text-white position-relative">
+          <a href="#" class="nav-link text-white position-relative">
             <i class="fa-regular fa-heart fa-lg"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
           </a>
         </li>
 
@@ -79,13 +79,30 @@ if (session_status() === PHP_SESSION_NONE) {
       <div class="modal-body">
         <?php if (!empty($_SESSION['carrito'])): ?>
           <?php foreach ($_SESSION['carrito'] as $id => $producto): ?>
+            <?php
+              $nombre = isset($producto['nombre']) ? htmlspecialchars($producto['nombre']) : 'Producto sin nombre';
+              $precio = isset($producto['precio']) ? (float)$producto['precio'] : 0;
+              $cantidad = isset($producto['cantidad']) ? (int)$producto['cantidad'] : 1;
+              $imagen = isset($producto['imagen']) ? $producto['imagen'] : 'img/default.jpg';
+              $subtotal = $precio * $cantidad;
+            ?>
             <div class="d-flex align-items-center justify-content-between mb-3">
               <!-- Info producto -->
               <div class="d-flex align-items-center">
-                <img src="<?php echo $producto['imagen']; ?>" width="60" class="me-3">
+                <img src="<?php echo $imagen; ?>" width="60" class="me-3">
                 <div>
-                  <strong><?php echo htmlspecialchars($producto['nombre']); ?></strong><br>
-                  Precio: $<?php echo number_format((float)$producto['precio'], 2); ?> mxn
+                  <strong><?php echo $nombre; ?></strong><br>
+                  <span class="precio-unitario d-none"><?php echo number_format($precio, 2); ?></span>
+                  Precio unitario: $<?php echo number_format($precio, 2); ?> mxn<br>
+                  Cantidad:
+                  <input type="number"
+                         class="form-control form-control-sm cantidad-input"
+                         data-id="<?php echo $id; ?>"
+                         value="<?php echo $cantidad; ?>"
+                         min="1"
+                         style="width: 60px; display: inline-block;">
+                  <br>
+                  Subtotal: $<span class="subtotal-item"><?php echo number_format($subtotal, 2); ?></span>
                 </div>
               </div>
 
@@ -96,6 +113,17 @@ if (session_status() === PHP_SESSION_NONE) {
               </form>
             </div>
           <?php endforeach; ?>
+
+          <hr>
+          <div class="text-end fw-bold fs-5">
+            Total: $<span id="total-general">0.00</span>
+          </div>
+
+          <!-- Botón finalizar -->
+          <a id="btnFinalizarCompra" target="_blank" class="btn btn-success mt-3 w-100">
+            Finalizar compra por WhatsApp
+          </a>
+
         <?php else: ?>
           <p>Tu carrito está vacío.</p>
         <?php endif; ?>
